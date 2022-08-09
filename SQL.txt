@@ -1,0 +1,591 @@
+1. Create new database named as Roshan
+
+Query: Create Database Roshan;
+
+MariaDB [(none)]>
+/////////////////////////////////////////////////////////////
+
+2. Create table named as student which contains following fields as Name, Address, Roll number, Marks, Age. Create that table in Roshan
+
+Database.
+
+Query: Create table Student
+
+(
+
+Roll No int,
+
+Name varchar(255), Address varchar(255),
+
+Age int,
+
+Marks int
+
+);
+/////////////////////////////////////////////////////////
+
+3. Display layout of Student table.
+
+Query:
+
+Describe Student;
+///////////////////////////////////////////////////////////
+
+4. Insert new entry in table.
+
+Query: Insert into Student values (1, 'Amit',,'Pune,21,90);
+/////////////////////////////////////////////////////////////
+
+5. Display all records from Student table.
+
+Query:
+
+Select * from Student;
+////////////////////////////////////////////////////////////
+
+6. Display all Students from Nasik.
+
+Query:
+
+Select * from Student where address = 'Nasik';
+////////////////////////////////////////////////////////////
+
+7. Display all Students from whose age is 21.
+
+Query:
+
+Select from Student where age = 21;
+////////////////////////////////////////////////////////////
+
+8. Display all Students from whose obtained Marks are 90.
+
+Query:
+
+Select from Student where Marks = 90;
+//////////////////////////////////////////////////////////////
+
+9. Display only names of students who's lives in Mumbai.
+
+Query:
+
+Select Name from Student where Address = "Mumbai';
+////////////////////////////////////////////////////////////////
+
+
+10. Display only names and Age of students whose Age is greater than 23.
+
+Query:
+
+Select Name, Age from Student where Age > 23;
+
+///////////////////////////////////////////////////////////////////
+
+11. Display only names and Age of students whose Age is greater than 23 and Address is Pune.
+
+Query:
+
+Select Name,Age from Student where Age > 23 AND Address = 'Pune';
+/////////////////////////////////////////////////////////////////
+
+ 12. Update Address to 'Satara' of student whose Room number is 5 And name is Pooja.
+
+Query:
+
+Update Student Set Address = 'Satara' where RollNo = 5 And Name = 'Pooja';
+
+///////////////////////////////////////////////////////////////////
+
+13. Display contents of Student table order by there names.
+
+Query:
+
+Select * from Student Order by Name;
+
+///////////////////////////////////////////////////////////////////
+
+14. Display contents of Student table in Descending order by there Marks
+
+who
+
+lives in Pune.
+
+Query:
+
+Select * from Student Where Address = 'Pune' Order by Marks DESC;
+/////////////////////////////////////////////////////////////////////
+
+15. Display contents of Student table in Descending order by there Marks who
+
+lives in Pune and Age is Greater than 20.
+
+Query:
+
+Select * from Student Where Address = 'Pune' AND Age > 20 Order by Marks DESC;
+/////////////////////////////////////////////////////////////////////////
+
+16. Display all information of Student whose name is 'Yuvraj'
+[5:02 pm, 09/08/2022] Roshan-Kale: 10 Rat Pune
+
+16. Display all information of Student whose name is 'Yuvraj'
+
+Query:
+
+Select from Student Where Name = "Yuvraj';
+//////////////////////////////////////////////////////////////////////////
+
+17. Display all names of student from Nasik whose age is greater than 20.
+
+Query:
+
+Select Name from Student Where Age > 20 AND Address = 'Nasik';
+
+//////////////////////////////////////////////////////////////////////////
+
+18. Display names of Cities from Student table.
+
+Query:
+
+Select Distinct Address from Student;
+//////////////////////////////////////////////////////////////
+
+19. Display First 5 records from table.
+
+Query:
+
+Select From Student LIMIT 5;
+//////////////////////////////////////////////////////////////
+
+20. Display highest marks of student.
+
+Query:
+
+Select MAX(Marks) from Student;
+////////////////////////////////////////////////////////////
+
+21. Display all information of students whose name starts with 'P'
+
+Query:
+
+Select * from Student where Name like 'P%';
+/////////////////////////////////////////////////////////////
+
+22. Display number of students in each city.
+
+Query:
+
+Select Address, Count(Address) from Student Group by Address;
+
+///////////////////////////////////////////////////////////////
+
+
+23. Display Average marks of students from each city.
+
+Query:
+
+Select Address, AVG(Marks) from Student Group by Address;
+//////////////////////////////////////////////////////////////////////
+
+24. Display all names of students whose name stats with 'P' and marks are greater than 90.
+
+Query :
+
+Select * From Students Where Name LIKE 'P%' and Marks > 90;
+////////////////////////////////////////////////////////////////////////
+
+25. Display name of student with second maximum marks.
+
+Query:
+
+Select Name, MAX(Marks) as Marks from Students Where Marks < (Select MAX(Marks) from Students);
+////////////////////////////////////////////////////////////////////////////
+
+26. Display total number of students from each city.
+
+Query:
+
+SELECT Address, COUNT(RollNo) FROM Student GROUP BY Address;
+//////////////////////////////////////////////////////////////////////////
+
+
+27. Display total number of students from each age group.
+
+Query:
+
+SELECT Age, COUNT(RollNo) FROM Student GROUP BY Age;
+////////////////////////////////////////////////////////////////////////
+
+28. Display details of student having lowest marks.
+
+Query:
+
+Select name, Address, Age, MIN(Marks) from Student;
+///////////////////////////////////////////////////////////////////////////////////
+
+29. Display number of students in each city. Only include such a contains more than one student.
+
+cities which
+
+9713 ∙sugh pen
+
+Query:
+
+SELECT COUNT(RollNo), Address FROM Student
+
+GROUP BY Address
+
+HAVING COUNT(RollNo) > 1;
+////////////////////////////////////////////////////////////////////////////////
+
+29. Display all names of students whose name consist of only 4 letters in it
+
+Query:
+
+SELECT Name FROM Student
+
+where Name LIKE'____';
+
+///////////////////////////////////////////////////////////////////////////////
+
+30. Display Minimum obtained marks in each city.
+
+Query:
+
+SELECT MIN(Marks)
+
+FROM Student
+
+GROUP BY Address;
+///////////////////////////////////////////////////////////////////
+
+31. Display all names of students whose age is in between 25 to 30.
+
+Query:
+
+Select Name Age from student where Age >=25 AND Age <=30;
+//////////////////////////////////////////////////////////////////////
+
+32. Display contents of Student table in Descending order by there Marks.
+
+Query:
+
+Select * from Student Order by Marks DESC;
+///////////////////////////////////////////////////////////////////////////////////
+
+33. Increase marks of student by 15% whose name is Pooja.
+
+ UPDATE Student SET Marks Marks 1.15 WHERE Name = 'Pooja'
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+34. Increase marks of each student by 2% from Pune and Satara.
+
+Query:
+
+UPDATE Student SET Marks Marks 1.15 WHERE Address = 'Pune' OR 'Satara';
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+35. Display all names of students that are not from pune, Mumbai and nasik.
+
+Query:
+
+SELECT name FROM Student WHERE Address NOT IN ('Pune, Mumbai', 'Nasik")
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Important concepts of SQL
+........................................................................................................................................................................
+..........................................................................................................................................................................
+ 
+1. Create new Database
+
+CREATE DATABASE databasename;
+
+Example : Create new database named as sai.
+
+CREATE DATABASE sai;
+///////////////////////////////////////////////////////////////////////////////
+
+2. Select that created database
+
+USE DatabaseName;
+
+Example:
+
+USE sai;
+////////////////////////////////////////////////////////////////////////////////////////
+
+3. Now we can create table in that database.
+
+
+Example:
+
+CREATE TABLE Student
+
+(
+
+Roll No int,
+
+Name varchar(255), Address varchar(255),
+
+City varchar(255),
+
+Marks int);
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+4. Check layout of created table
+
+DESCRIBE Table_name;
+
+Example:
+
+DESCRIBE Student; 
+////////////////////////////////////////////////////////////////////////////////////////
+
+5. Now insert record into created table
+
+INSERT INTO table_name VALUES (value1, value2, value3, ...);
+
+Example :
+
+INSERT INTO Student VALUES (11,'Amit', 'Karve Road Pune',97);
+//////////////////////////////////////////////////////////////////////////////
+
+6. Now we can display the contents of table using select query.
+
+SELECT * FROM table_name;
+
+Example:
+
+SELECT * FROM Student;
+////////////////////////////////////////////////////////////////////////////////////////
+
+7. We can search specific record from the table using where clause
+
+Example :
+
+SELECT * FROM STUDENT WHERE RollNo = 12;
+///////////////////////////////////////////////////////////////////////////////////
+
+8. We can display records in specific order using Order By Clause.
+
+SELECT column1, column2,...
+
+FROM table_name
+
+ORDER BY column1, column2, ... ASC DESC;
+
+Example:
+
+SELECT * FROM Student ORDER BY Marks;
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+9. Update any specific record from table.
+
+UPDATE table_name
+
+SET column1 = value1, column2 = value2, ...
+
+WHERE condition;
+
+Example :
+
+UPDATE Student SET Name = "Vishal' WHERE RollNo = 12;
+///////////////////////////////////////////////////////////////////////////
+
+10. We can delete specific record from table
+
+
+DELETE FROM table_name WHERE condition;
+
+Example:
+
+DELETE FROM Student WHERE Roll No-14;
+///////////////////////////////////////////////////////////////////////
+
+11. We can call Min function on table
+
+SELECT MIN(column_name) FROM table_name
+
+WHERE condition;
+
+Example :
+
+SELECT MIN(Marks) FROM Student;
+//////////////////////////////////////////////////////////////////////
+
+12. We can call MAX function on table
+
+SELECT MAX(column_name)
+
+FROM table_name
+
+WHERE condition;
+
+Example :
+
+SELECT MAX(Marks) FROM Student;
+//////////////////////////////////////////////////////////////////////////
+
+13. We can call COUNT function to count specific records from table.
+
+SELECT COUNT(column_name) FROM table_name
+
+WHERE condition;
+
+Example :
+
+SELECT COUNT(Name)
+
+FROM Student WHERE Marks> 90;
+//////////////////////////////////////////////////////////////////////////
+
+14. The AVG() function returns the average value of a numeric column.
+
+SELECT AVG(column_name)
+
+FROM table_name WHERE condition;
+[5:04 pm, 09/08/2022] Roshan-Kale: 14. The AVG() function returns the average value of a numeric column.
+
+SELECT AVG(column_name)
+
+FROM table_name
+
+WHERE condition;
+
+Example:
+
+SELECT AVG(Marks) FROM Student;
+////////////////////////////////////////////////////////////////////////////////
+
+15. The SUM() function returns the total sum of a numeric column.
+
+SELECT SUM(column_name)
+
+FROM table_name
+
+WHERE condition;
+
+Example :
+
+SELECT SUM(Marks) FROM Student;
+
+MariaDB Marvellous1> SELECT SUM( Marks) from Student; SUM(MAPK)
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+16. We can perform Pattern Matching using LIKE operator.
+
+SELECT column1, column2,...
+
+FROM table_name
+
+WHERE columnN LIKE pattern;
+
+Example:
+
+SELECT Name FROM Student
+
+WHERE Name LIKE 'A%';
+/////////////////////////////////////////////////////////////////////////
+
+17. Use of IN operator to search in specific values.
+
+SELECT column_name(s)
+
+FROM table_name
+
+WHERE column name IN (value1, value2, );
+
+Example:
+
+Select Name From student
+
+Where Name IN('Pune', 'Nasik');
+/////////////////////////////////////////////////////////////////////////////////////////
+
+18. We can use BETWEEN operator to search in specific range.
+
+SELECT column_name(s)
+
+FROM table_name
+
+WHERE column_name BETWEEN value1 AND value2;
+
+SELECT Name
+
+FROM Student
+
+WHERE Marks BETWEEN 80 AND 95;
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+19. The GROUP BY statement is often used with aggregate funt.JUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns.
+
+SELECT column_name(s)
+
+FROM table_name
+
+WHERE condition
+
+GROUP BY column_name(s) ORDER BY column_name(s);
+
+SELECT COUNT(RollNo), Address FROM Student
+
+GROUP BY Address;
+///////////////////////////////////////////////////////////////////////////////////////////
+
+20. Using Alter table we can add new column in table.
+
+ALTER TABLE table_name ADD column_name datatype;
+
+ALTER TABLE Student
+
+ADD Age int;
+////////////////////////////////////////////////////////////////////////////////////////////
+
+21. Using Alter table we can remove column from table.
+
+ALTER TABLE table_name DROP column_name;
+
+ALTER TABLE Student DROP Age;
+/////////////////////////////////////////////////////////////////////////////////
+
+22. PRIMARY KEY Constraint:-
+
+The PRIMARY KEY constraint uniquely identifies each record in a table.
+
+Primary keys must contain UNIQUE values, and cannot contain NULL values. A table can have only one primary key, which may consist of single or multiple fields.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+23. UNIQUE Constraint:-
+
+The UNIQUE constraint ensures that all values in a column are different. Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a
+
+column or set of columns. A PRIMARY KEY constraint automatically has a UNIQUE constraint. However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+24. NOT NULL Constraint:-
+
+By default, a column can hold NULL values. The NOT NULL constraint enforces a column to NOT accept NULL values.
+
+This enforces a field to always contain a value, which means that you cannot insert a
+
+new record, or update a record without adding a value to this field. 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+25. DEFAULT Constraint:-
+
+The DEFAULT constraint is used to provide a default value for a column. The default value will be added to all new records IF no other value is specified.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+26. CHECK Constraint:-
+
+The CHECK constraint is used to limit the value range that can be placed in a column.
+If you define a CHECK constraint on a single column it allows only certain values for this column. If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+
+CREATE TABLE Teacher (
+
+EID int PRIMARY KEY, Name varchar(255) NOT NULL UNIQUE,
+
+Age int, Address varchar(255) DEFAULT 'Pune',
+
+CHECK (Age>=25);
